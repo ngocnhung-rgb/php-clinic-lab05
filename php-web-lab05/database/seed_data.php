@@ -29,16 +29,14 @@ try {
             (['new', 'contacted', 'qualified', 'lost'])[rand(0, 3)]
         ]);
 
-        // Tạo Order tương ứng
-        $stmtOrder = $pdo->prepare("INSERT INTO orders (order_code, customer_name, customer_email, total_amount, appointment_date, status, product_name) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmtOrder = $pdo->prepare("INSERT INTO orders (order_code, customer_name, customer_email, total_amount, appointment_date, status) VALUES (?, ?, ?, ?, ?, ?)");
         $stmtOrder->execute([
             "ORD" . str_pad($i, 5, '0', STR_PAD_LEFT),
             "Bệnh nhân $i",
             "patient$i@example.com",
             rand(100, 5000) * 1000,
             date('Y-m-d H:i:s', strtotime("+" . rand(1, 30) . " days")),
-            (['pending', 'completed', 'cancelled'])[rand(0, 2)],
-            "Dịch vụ khám răng số $i"
+            (['pending', 'completed', 'cancelled'])[rand(0, 2)]
         ]);
     }
     

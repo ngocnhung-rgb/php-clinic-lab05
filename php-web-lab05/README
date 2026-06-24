@@ -1,0 +1,114 @@
+php -S localhost:8000 -t public/
+
+Gõ lệnh này để đi vào bên trong thư mục dự án: 
+cd php-web-lab05
+Sau khi đã vào trong thư mục dự án, hãy chạy lệnh sau:
+php database/seed_data.php
+
+Lưu ý:
+Dự án được phát triển trên Laragon. 
+Người dùng chỉ cần import database, khởi động Apache/MySQL trong Laragon và truy cập đường dẫn localhost là có thể chạy đầy đủ chức năng.
+
+# PHP Web Lab 05 - Mini Clinic Management
+
+## Môi trường phát triển
+Dự án được phát triển và kiểm thử trên:
+* Laragon
+* PHP 8.x
+* MySQL/MariaDB
+* Apache
+Không yêu cầu Visual Studio Code. Có thể chạy bằng Laragon Terminal hoặc Command Prompt.
+
+## Cài đặt Database
+
+### Bước 1: Tạo Database
+Mở phpMyAdmin hoặc MySQL Client.
+
+Import file:
+```sql
+database/schema.sql
+```
+Sau đó import:
+```sql
+database/seed.sql
+```
+
+## Sinh dữ liệu mẫu (Seed Data)
+Dự án có sẵn chương trình tạo dữ liệu tự động để kiểm thử Pagination, Search và EXPLAIN.
+Mở Laragon Terminal.
+Đi tới thư mục dự án:
+```bash
+cd php-web-lab05
+```
+Chạy lệnh:
+```bash
+php database/seed_data.php
+```
+Kết quả:
+* Sinh tự động khoảng 200 bệnh nhân (Leads)
+* Sinh tự động khoảng 200 lịch hẹn (Orders)
+
+## Chạy dự án
+Đặt thư mục dự án trong:
+```text
+C:\laragon\www\
+```
+Khởi động:
+* Apache
+* MySQL
+
+Truy cập trên trình duyệt:
+http://php-web-lab05.test/
+
+## Chức năng chính
+
+### Quản lý Bệnh nhân (Leads)
+* Danh sách bệnh nhân
+* Tìm kiếm
+* Phân trang
+* Sắp xếp dữ liệu
+* Thêm bệnh nhân
+* Chỉnh sửa bệnh nhân
+* Xóa bệnh nhân
+
+### Quản lý Lịch hẹn (Orders)
+* Danh sách lịch hẹn
+* Tìm kiếm
+* Phân trang
+* Sắp xếp dữ liệu
+* Tạo lịch hẹn
+* Chỉnh sửa lịch hẹn
+* Hủy/Xóa lịch hẹn
+
+## Các kỹ thuật đã áp dụng
+
+### Database
+* Primary Key
+* Unique Constraint
+* Index
+* Foreign Data Validation
+
+### Bảo mật
+* PDO Prepared Statements
+* Safe Sort Whitelist
+* Exception Handling
+* Duplicate Key Handling
+
+### Kiến trúc
+* MVC Pattern
+* Repository Pattern
+* Database Class
+* Dependency Container
+
+### Trải nghiệm người dùng
+* Flash Message
+* Validation
+* PRG Pattern (Post-Redirect-Get)
+* Friendly Error Message
+
+### Kiểm thử
+* Seed Data Generator
+* Pagination Testing
+* Search Testing
+* Duplicate Data Testing
+* Query Analysis bằng EXPLAIN

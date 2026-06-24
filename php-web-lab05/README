@@ -1,10 +1,3 @@
-php -S localhost:8000 -t public/
-
-Gõ lệnh này để đi vào bên trong thư mục dự án: 
-cd php-web-lab05
-Sau khi đã vào trong thư mục dự án, hãy chạy lệnh sau:
-php database/seed_data.php
-
 Lưu ý:
 Dự án được phát triển trên Laragon. 
 Người dùng chỉ cần import database, khởi động Apache/MySQL trong Laragon và truy cập đường dẫn localhost là có thể chạy đầy đủ chức năng.

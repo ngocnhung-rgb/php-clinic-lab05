@@ -49,7 +49,7 @@ class OrderRepository
             ]);
         } catch (PDOException $e) {
             if (($e->errorInfo[1] ?? null) === 1062) {
-                throw new DuplicateRecordException('Mã đơn hàng này đã tồn tại.');
+                throw new DuplicateRecordException('Mã lịch hẹn này đã tồn tại.');
             }
             throw $e;
         }
